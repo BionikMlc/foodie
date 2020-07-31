@@ -1,0 +1,12 @@
+.MealItem {
+    display: flex;
+    justify-content: center;
+}
+.MealItemImg {
+    display: flex;
+    justify-content: center;
+}
+.MealItemIng {
+    display: flex;
+    justify-content: center;
+}

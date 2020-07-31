@@ -1,0 +1,32 @@
+.MoveUp {
+    animation-name: fromDown;
+    animation-duration: 1s;
+
+}
+
+.MoveRight {
+    animation-name: fromLeft;
+    animation-duration: 1s;
+}
+
+.Expand {
+    animation-name: expand;
+    animation-duration: 1s;
+}
+
+@keyframes fromDown {
+    from {transform: translateY(400%);opacity: 0;}
+    to {transform: translateX(0);opacity: 1;}
+  }
+
+  @keyframes fromLeft {
+    from {transform: translateX(-400%);opacity: 0;}
+    to {transform: translateX(0);opacity: 1;}
+  }
+
+  @keyframes expand {
+    from {width: 0;}
+    to {width: 150px;}
+  }
+
+
