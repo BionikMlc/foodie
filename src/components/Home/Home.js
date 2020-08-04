@@ -1,5 +1,6 @@
 import React from 'react';
 import Content from '../Content/Content';
+import { withRouter } from 'react-router-dom';
 
 function Home(props) {
     console.log(props);
@@ -9,4 +10,4 @@ function Home(props) {
         </div>
         )
 }
-export default Home
+export default withRouter(Home)

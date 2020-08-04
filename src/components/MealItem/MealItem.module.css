@@ -1,12 +1,62 @@
-.MealItem {
+.MealItemContainer {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -9.9em;
+    font-family: sans-serif;
 }
 .MealItemImg {
+    width: 35%;
     display: flex;
     justify-content: center;
 }
-.MealItemIng {
+.MealItemImg img{
+    max-width: 100%;
+}
+.MealItemTitle {
+    padding-bottom: .8em;
+}
+.MealItemText {
+    padding: 0 .5em;
+    width: 60%;
+    line-height: 1.6;
+    font-size: 1.5rem;
+}
+.MealItemIngList {
+    width: 60%;
+    list-style: none;
+    font-size: 1.5rem;
+    margin-bottom: 2em;
+
+}
+.MealItemIngList li{
+    background: #e6e4e4;
+    padding:  1em 4em;
+    margin-bottom: 1.6em;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    position: relative;
+    box-shadow: 0px 5px 20px #666;
+
+
+}
+
+.MealItemIngList span{
+    border-radius: 50%;
+    color: #ff7300;
+    background: #232f38ea;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 1.5em;
+    left: -.5em;
+    top: -.6em;
+    width: 84px;
+    height: 84px;
+}
+
+.MealItemContainer h2{
+    text-transform: capitalize;
+    padding: 1.5em 0;
 }
