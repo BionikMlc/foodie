@@ -79,8 +79,6 @@ export class App extends Component {
 
   componentDidMount(){
     this.fetchData('https://www.themealdb.com/api/json/v1/1/categories.php','categories');
-    this.fetchMealById('52772');
-
   }
 
   searchItem = (searchVal)=>{
@@ -104,32 +102,6 @@ export class App extends Component {
     });
   }
 
-  fetchMealById(id)
-  {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-    .then(res => res.json())
-    .then(mealItem =>{
-
-        const mealItemData = mealItem.meals.map((meal) =>{
-          let i = 1;
-          let ing = [];
-          while(meal['strIngredient'+i] !== null && meal['strIngredient'+i] !== " "){
-              ing.push(meal['strMeasure'+i]+" "+meal['strIngredient'+i]);
-              ++i;
-          }
-          console.log(meal['strMeasure'+10] !== " ");
-          return {
-            title: meal.strMeal,
-            instruct: meal.strInstructions,
-            img: meal.strMealThumb,
-            vid: meal.strYoutube,
-            ingredient: ing
-          }
-        });
-        console.log(mealItemData);
-
-    });
-  }
     
   
   render() {

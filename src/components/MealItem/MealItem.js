@@ -1,28 +1,86 @@
-import React from 'react'
+import React, { Component } from 'react'
 import  {MealItemContainer,MealItemImg,MealItemIngList,MealItemTitle,MealItemText} from './MealItem.module.css';
 import { withRouter } from 'react-router-dom';
 
-function MealItem(props) {
-    console.log(props);
-    return (
-        <div>
-            <div className={MealItemContainer}>
-                <h1 className={MealItemTitle}>Meal Title</h1>
-                <div className={MealItemImg}><img src="https://w.wallhaven.cc/full/wy/wallhaven-wyz8z6.jpg" alt=""/></div>
-                <h2>ingredients</h2>
-                <ul className={MealItemIngList}>
-                    <li><span>1</span>item</li>
-                    <li><span>2</span>item</li>
-                    <li><span>3</span>item</li>
-                    <li><span>4</span>item</li>
-                    <li><span>5</span>item</li>
-                    <li><span>6</span>item</li>
-                </ul>
-                <h2>instructions</h2>
-                <p className={MealItemText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nobis, consectetur, magni quae facilis dolorum ducimus quibusdam natus velit porro ea enim totam eligendi voluptates, rerum aut deserunt ab. Sit accusantium, deleniti at provident laudantium molestias soluta! Ducimus qui commodi accusamus reprehenderit temporibus magni nostrum dolorum doloribus neque.</p>
-            </div>
-        </div>
-    )
+
+class MealItem extends Component {
+
+    state = {
+        title: '',
+        instruct: '',
+        img: null,
+        vid: null,
+        ingredient: []
+    }
+
+    fetchMealById(id)
+    {
+        console.log(id);
+      fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+      .then(res => res.json())
+      .then(mealItem =>{
+            let i = 1;
+            let ing = [];
+            console.log(mealItem.meals);
+          const mealItemData = mealItem.meals.map((meal,index) =>{
+            // if(meal['strIngredient'+i] !== null && meal['strIngredient'+i] !== " ")
+            //     ing.push(meal['strMeasure'+i]+" "+meal['strIngredient'+i]);
+
+                while(i<=20){
+                    if(meal['strIngredient'+i] !== null && meal['strIngredient'+i] !== "")
+                           ing.push(meal['strMeasure'+i]+" "+meal['strIngredient'+i]);
+                    ++i;
+                }
+            
+            return {
+              title: meal.strMeal,
+              instruct: meal.strInstructions,
+              img: meal.strMealThumb,
+              vid: meal.strYoutube,
+              ingredient: ing
+            }
+          });
+          const ingredients = mealItemData[0].ingredient.filter(item=>(item !== " ")).map((item,index)=>{
+              return <li><span>{index+1}</span>{item}</li>
+          })
+          console.log(ingredients)
+          this.setState({
+            title: mealItemData[0].title,
+            instruct: mealItemData[0].instruct,
+            img: mealItemData[0].img,
+            vid: mealItemData[0].vid,
+            ingredient: ingredients
+          });
+        console.log(mealItem);
+  
+      });
+    }
+
+    componentDidMount(){
+        const id = this.props.match.params.id;
+        this.fetchMealById(id);
+    }
+
+    render() {
+        console.log(this.state)
+        const {title,img,instruct,ingredient} = this.state;
+            return (
+                <div>
+                    <div className={MealItemContainer}>
+                        <h1 className={MealItemTitle}>{title}</h1>
+                        <div className={MealItemImg}><img src={img} alt=""/></div>
+                        <h2>ingredients</h2>
+                        <ul className={MealItemIngList}>
+                            {ingredient}
+                        </ul>
+                        <h2>instructions</h2>
+                    <p className={MealItemText}>{instruct}</p>
+                    </div>
+                </div>
+            )
+        
+    }
 }
 
 export default withRouter(MealItem)
+
