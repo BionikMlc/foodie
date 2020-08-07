@@ -8,10 +8,9 @@ function Back(props) {
 
     const css = style.Back+' '+anim.Expand+' ';//+style.show;
     return (
-            <button className={css} onClick={props.clickHandler}>
+            <Link to={'/'}  className={css} onClick={props.clickHandler}>
                 Categories
-            </button>
-        
+            </Link>
     )
 }
 

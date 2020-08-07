@@ -17,6 +17,7 @@
 
 .HeaderText {
     text-transform: capitalize;
+    text-align: center;
     font-size: 1.9rem;
     display: flex;
     flex-direction: column;

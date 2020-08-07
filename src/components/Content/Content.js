@@ -21,9 +21,8 @@ function Content(props) {
             borderBottom: '10px solid #232f38'
       }
 
-
     return (
-    
+
         <div>
             <h2 style={headingStyle} className={Style.MoveRight} >{props.title}</h2>
             <div style={cardListContainerStyle} className={Style.MoveUp}>

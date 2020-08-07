@@ -3,19 +3,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
-
-
-import PropTypes from 'prop-types'
 
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
 import MealCard from './components/MealCard/MealCard';
-import Content from './components/Content/Content.js';
-import Back from './components/Back/Back.js';
-import Home from './components/Home/Home.js';
+import Catig from './components/Catig/Catig';
+import Back from './components/Back/Back';
+import Home from './components/Home/Home';
 import MealItem from './components/MealItem/MealItem';
 
 
@@ -50,7 +46,7 @@ export class App extends Component {
         id:    item.id,
         img:   item.img,
       }
-      return  <MealCard  mealData={data} key={data.id} />
+      return  <MealCard isCat={this.state.title === 'Categories'} mealData={data} key={data.id} />
     }): null;
 
     return mealList;
@@ -102,8 +98,6 @@ export class App extends Component {
     });
   }
 
-    
-  
   render() {
     //load data when state is not empty
     return (
@@ -113,6 +107,9 @@ export class App extends Component {
           <Switch>
             <Route path='/meals/:id'>
               <MealItem />
+            </Route>
+            <Route path='/categories/:id'>
+              <Catig searchItem={this.searchItem} clickHandler={this.backClickHandler} />
             </Route>
             <Route exact path='/'>
               <Search  searchItem={this.searchItem} />
