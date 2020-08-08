@@ -13,10 +13,7 @@ import Catig from './components/Catig/Catig';
 import Back from './components/Back/Back';
 import Home from './components/Home/Home';
 import MealItem from './components/MealItem/MealItem';
-
-
-
-
+import Footer from './components/Footer/Footer'
 
 export class App extends Component {
   // static propTypes = {
@@ -117,7 +114,7 @@ export class App extends Component {
               <Home  title={this.state.title}  listData={this.listContents.bind(this)} />
             </Route>
           </Switch>
-         
+         <Footer />
 
         </Router>
       </div>

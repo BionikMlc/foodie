@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import  {MealItemContainer,MealItemImg,MealItemIngList,MealItemTitle,MealItemText} from './MealItem.module.css';
+import  {MealItemContainer,MealItemImg,MealItemIngList,MealItemTitle,MealItemText,RibbonText} from './MealItem.module.css';
 import { withRouter } from 'react-router-dom';
+import Back from '../Back/Back';
 
 
 class MealItem extends Component {
@@ -15,13 +16,11 @@ class MealItem extends Component {
 
     fetchMealById(id)
     {
-        console.log(id);
       fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then(res => res.json())
       .then(mealItem =>{
             let i = 1;
             let ing = [];
-            console.log(mealItem.meals);
           const mealItemData = mealItem.meals.map((meal,index) =>{
             // if(meal['strIngredient'+i] !== null && meal['strIngredient'+i] !== " ")
             //     ing.push(meal['strMeasure'+i]+" "+meal['strIngredient'+i]);
@@ -51,7 +50,6 @@ class MealItem extends Component {
             vid: mealItemData[0].vid,
             ingredient: ingredients
           });
-        console.log(mealItem);
   
       });
     }
@@ -62,18 +60,18 @@ class MealItem extends Component {
     }
 
     render() {
-        console.log(this.state)
         const {title,img,instruct,ingredient} = this.state;
             return (
                 <div>
+                    <Back />
                     <div className={MealItemContainer}>
                         <h1 className={MealItemTitle}>{title}</h1>
                         <div className={MealItemImg}><img src={img} alt=""/></div>
-                        <h2>ingredients</h2>
+                        <h2 className={RibbonText}>ingredients</h2>
                         <ul className={MealItemIngList}>
                             {ingredient}
                         </ul>
-                        <h2>instructions</h2>
+                        <h2 className={RibbonText}>instructions</h2>
                     <p className={MealItemText}>{instruct}</p>
                     </div>
                 </div>

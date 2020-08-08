@@ -17,13 +17,18 @@ function Content(props) {
             margin: '2.4em 0',
             color: '#7d613d',
             paddingBottom: '.5em',
+            paddingTop: '1.2em',
             width: '250px',
             borderBottom: '10px solid #232f38'
       }
 
+    const ContainerStyle = {
+        background: '#dedede',
+    }
+
     return (
 
-        <div>
+        <div style={ContainerStyle}>
             <h2 style={headingStyle} className={Style.MoveRight} >{props.title}</h2>
             <div style={cardListContainerStyle} className={Style.MoveUp}>
                 {props.listData()}
