@@ -13,6 +13,7 @@ import Catig from './components/Catig/Catig';
 import Back from './components/Back/Back';
 import Home from './components/Home/Home';
 import MealItem from './components/MealItem/MealItem';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Footer from './components/Footer/Footer'
 
 export class App extends Component {
@@ -101,7 +102,8 @@ export class App extends Component {
       <div>
         <Header />
         <Router>
-          <Switch>
+          <ScrollToTop>
+            <Switch>
             <Route path='/meals/:id'>
               <MealItem />
             </Route>
@@ -115,8 +117,10 @@ export class App extends Component {
             </Route>
           </Switch>
          <Footer />
-
+          </ScrollToTop>
+          
         </Router>
+
       </div>
     )
   }

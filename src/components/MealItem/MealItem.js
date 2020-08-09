@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import  {MealItemContainer,MealItemImg,MealItemIngList,MealItemTitle,MealItemText,RibbonText} from './MealItem.module.css';
+import  {MealItemContainer,MealItemImg,MealItemIngList,MealItemText,RibbonText} from './MealItem.module.css';
 import { withRouter } from 'react-router-dom';
 import Back from '../Back/Back';
 
@@ -40,7 +40,7 @@ class MealItem extends Component {
             }
           });
           const ingredients = mealItemData[0].ingredient.filter(item=>(item !== " ")).map((item,index)=>{
-              return <li><span>{index+1}</span>{item}</li>
+              return <li key={index}><span>{index+1}</span>{item}</li>
           })
           console.log(ingredients)
           this.setState({
@@ -61,11 +61,12 @@ class MealItem extends Component {
 
     render() {
         const {title,img,instruct,ingredient} = this.state;
+
             return (
                 <div>
                     <Back />
                     <div className={MealItemContainer}>
-                        <h1 className={MealItemTitle}>{title}</h1>
+                        <h1 className={RibbonText}>{title}</h1>
                         <div className={MealItemImg}><img src={img} alt=""/></div>
                         <h2 className={RibbonText}>ingredients</h2>
                         <ul className={MealItemIngList}>
