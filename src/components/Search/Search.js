@@ -1,8 +1,4 @@
 import React,{useState} from 'react'
-import {
-    BrowserRouter as Router,
-    Redirect
-  } from "react-router-dom";
 import style from './Search.module.css'
 
 
