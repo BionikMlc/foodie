@@ -1,0 +1,28 @@
+
+  .CardListContainerStyle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0em;
+}
+
+.HeadingStyle  {
+    text-align: center;
+    margin: 2.4em 0;
+    color: #7d613d;
+    padding-bottom: .5em;
+    padding-top: 1.2em;
+    width: 250px;
+    border-bottom: 10px solid #232f38;
+}
+
+.ContainerStyle  {
+background: '#dedede',
+}
+
+
+@media (max-width:500px){
+    .HeadingStyle{
+        margin:1.4em auto;
+    }
+  }

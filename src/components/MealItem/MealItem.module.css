@@ -66,7 +66,10 @@
 .MealItemContainer h1{
     color: #ff7300;
     text-transform: capitalize;
-    padding: 1.5em 0;
+    text-align: center;
+    padding: 1.2em 0;
+    width: 40%;
+    min-width: 200px;
 }
 
 .RibbonText {
@@ -110,3 +113,45 @@
     z-index: -1;
 
 }
+
+
+@media (max-width:660px){
+    .MealItemContainer h1{
+        font-size: 1.4rem;
+    }
+    .MealItemContainer h2{
+        font-size: 1.2rem;
+    }
+    .MealItemImg {
+        width: 60%;
+    }
+    .MealItemText {
+        color: #2f3030;
+        padding: 0 .5em;
+        width: 100%;
+        padding-bottom:2em;
+    }
+    .MealItemIngList li{
+        padding:  1rem;
+        margin-top: 3.5em;
+        font-size: 1.2rem;
+        text-align: center;
+    
+    }
+    .MealItemIngList span{
+
+        font-size: 1.7rem;
+        width: 64px;
+        height: 64px;
+        left: 50%;
+        top: -1.8em;
+        transform: translateX(-50%) ;
+    }
+}
+
+
+
+/* font-size: 1.6rem;
+width: 60%;
+text-align: center;
+padding: 1.1em */
