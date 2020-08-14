@@ -1,1 +1,1 @@
-A food Recipe web app powerd by mealDb Api
+A food Recipe web app powerd by mealDB API.
