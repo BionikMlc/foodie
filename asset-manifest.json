@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/foodie/static/css/main.f1714602.chunk.css",
+    "main.css": "/foodie/static/css/main.9d90865f.chunk.css",
     "main.js": "/foodie/static/js/main.1eb96fbc.chunk.js",
     "main.js.map": "/foodie/static/js/main.1eb96fbc.chunk.js.map",
     "runtime-main.js": "/foodie/static/js/runtime-main.b5a0ae38.js",
@@ -8,15 +8,15 @@
     "static/js/2.eccb5285.chunk.js": "/foodie/static/js/2.eccb5285.chunk.js",
     "static/js/2.eccb5285.chunk.js.map": "/foodie/static/js/2.eccb5285.chunk.js.map",
     "index.html": "/foodie/index.html",
-    "precache-manifest.e7f91cd20fa228a9490eaf87fe8e7d3e.js": "/foodie/precache-manifest.e7f91cd20fa228a9490eaf87fe8e7d3e.js",
+    "precache-manifest.2611b5956f3ea91f994a16fdafb746d9.js": "/foodie/precache-manifest.2611b5956f3ea91f994a16fdafb746d9.js",
     "service-worker.js": "/foodie/service-worker.js",
-    "static/css/main.f1714602.chunk.css.map": "/foodie/static/css/main.f1714602.chunk.css.map",
+    "static/css/main.9d90865f.chunk.css.map": "/foodie/static/css/main.9d90865f.chunk.css.map",
     "static/js/2.eccb5285.chunk.js.LICENSE.txt": "/foodie/static/js/2.eccb5285.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b5a0ae38.js",
     "static/js/2.eccb5285.chunk.js",
-    "static/css/main.f1714602.chunk.css",
+    "static/css/main.9d90865f.chunk.css",
     "static/js/main.1eb96fbc.chunk.js"
   ]
 }
