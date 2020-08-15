@@ -7,6 +7,7 @@
 }
 
 .SearchHeader {
+    font-family: 'Lobster', cursive;
     color: #7d613d;
     margin-bottom: .5em;
     font-size: 1.6rem;
@@ -51,4 +52,9 @@
     border: 3px solid #232f38;
     background: #f1f1f1;
     /* transform: translateX(-23%); */
+}
+
+.SearchBox:focus, .SearchBox:active {
+    border-color: #7d613d;
+    outline-color: #7d613d;
 }
